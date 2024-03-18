@@ -23,7 +23,11 @@ public class TesteBuscaHorario {
 
     @Before
     public void setup(){
-        
+        buscaHorario = new BuscaHorario(service);
     }
     
+    @Test
+    public void TesteBuscaHorarioInvalido(){
+        
+    }
 }
