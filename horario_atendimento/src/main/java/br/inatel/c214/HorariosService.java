@@ -1,5 +1,8 @@
 package br.inatel.c214;
 
-public class HorariosService {
+public interface HorariosService {
+
+        public String busca(int id);
     
+        public boolean horarioExistente(int id);
 }
