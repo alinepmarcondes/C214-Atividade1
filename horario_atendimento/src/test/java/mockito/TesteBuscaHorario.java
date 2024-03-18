@@ -28,7 +28,7 @@ public class TesteBuscaHorario {
     }
     
     @Test
-    public void testeBuscaHorarioA(){
+    public void testeBuscaHorarioChris(){
         Mockito.when(service.busca(55)).thenReturn(HorarioConst.CHRIS);
 
         Horarios chris = buscaHorario.buscaHorarios(55);
@@ -54,7 +54,7 @@ public class TesteBuscaHorario {
     }
 
     @Test
-    public void testeBuscaInimigoValido(){
+    public void testeBuscaHorarioValido(){
 
         Mockito.when(service.horarioExistente(10)).thenReturn(true);
         //Faz a busca de um horário válido
