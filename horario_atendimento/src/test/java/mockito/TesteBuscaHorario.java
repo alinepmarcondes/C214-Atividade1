@@ -3,6 +3,7 @@ package mockito;
 import br.inatel.c214.BuscaHorario;
 import br.inatel.c214.Horarios;
 import br.inatel.c214.HorariosService;
+import constante.HorariosConst;
 import junit.*;
 import org.mockito.*;
 import org.mockito.junit.MockitoJUnit;
@@ -29,7 +30,7 @@ public class TesteBuscaHorario {
     
     @Test
     public void testeBuscaHorarioChris(){
-        Mockito.when(service.busca(55)).thenReturn(HorarioConst.CHRIS);
+        Mockito.when(service.busca(55)).thenReturn(HorariosConst.CHRIS);
 
         Horarios chris = buscaHorario.buscaHorarios(55);
         //Faz assertion
@@ -42,7 +43,7 @@ public class TesteBuscaHorario {
 
     @Test
     public void TesteBuscaHorarioInvalido(){
-        Mockito.when(service.busca(56)).thenReturn(HorarioConst.INEXISTENTE);
+        Mockito.when(service.busca(56)).thenReturn(HorariosConst.INEXISTENTE);
 
         Horarios inexistente = buscaHorario.buscaHorarios(56);
         //Faz assertion
