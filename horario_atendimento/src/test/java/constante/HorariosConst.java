@@ -34,7 +34,7 @@ public class HorariosConst {
         "{ \"nomeDoProfessor\":\"Yvo\", \n " +
                 "\"horarioDeAtendimento\":\"21:30\", \n " +
                 "\"periodo\":\"noturno\", \n " +
-                "\"sala\":\"15\",\n " +
+                "\"sala\":\"0\",\n " +
                 "\"predio\":\"3\"}";
 
         public static String SONED =
