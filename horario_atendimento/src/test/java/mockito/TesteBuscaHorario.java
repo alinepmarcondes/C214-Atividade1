@@ -36,9 +36,9 @@ public class TesteBuscaHorario {
         //Faz assertion
         assertEquals("Chris Lima", chris.getNome());
         assertEquals("17:30", chris.getHorarioDeAtendimento());
-        assertEquals("E", chris.getPeriodo());
-        assertEquals("a", chris.getSala());
-        assertEquals("a", chris.getPredio());
+        assertEquals("integral", chris.getPeriodo());
+        assertEquals("3", chris.getSala());
+        assertEquals("1", chris.getPredio());
     }
 
     @Test
@@ -47,11 +47,11 @@ public class TesteBuscaHorario {
 
         Horarios inexistente = buscaHorario.buscaHorarios(56);
         //Faz assertion
-        assertEquals("chris", inexistente.getNome());
-        assertEquals("17:30", inexistente.getHorarioDeAtendimento());
-        assertEquals("E", inexistente.getPeriodo());
-        assertEquals("a", inexistente.getSala());
-        assertEquals("a", inexistente.getPredio());
+        assertEquals("Inexistente", inexistente.getNome());
+        assertEquals("Inexistente", inexistente.getHorarioDeAtendimento());
+        assertEquals("Inexistente", inexistente.getPeriodo());
+        assertEquals("Inexistente", inexistente.getSala());
+        assertEquals("Inexistente", inexistente.getPredio());
     }
 
     @Test
