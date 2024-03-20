@@ -20,12 +20,12 @@ public class HorariosConst {
         "{ \"nomeDoProfessor\":\"Renzo\", \n " +
                 "\"horarioDeAtendimento\":\"19:30\", \n " +
                 "\"periodo\":\"noturno\", \n " +
-                "\"sala\":\"20\",\n " +
-                "\"predio\":\"4\"}";
+                "\"sala\":\"10\",\n " +
+                "\"predio\":\"6\"}"; // predio errado
 
         public static String MARCELO =
         "{ \"nomeDoProfessor\":\"Marcelo\", \n " +
-                "\"horarioDeAtendimento\":\"15:30\", \n " +
+                "\"horarioDeAtendimento\":\"1530\", \n " +
                 "\"periodo\":\"integral\", \n " +
                 "\"sala\":\"7\",\n " +
                 "\"predio\":\"2\"}";
