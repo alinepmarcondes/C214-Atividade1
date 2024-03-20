@@ -8,7 +8,9 @@ import org.mockito.*;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.booleanThat;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -53,7 +55,7 @@ public class TesteBuscaHorario {
     }
 
     @Test
-    public void testeBuscaHorarioValido(){
+    public void testeBuscaHorarioExistente(){
 
         Mockito.when(service.horarioExistente(10)).thenReturn(true);
         //Faz a busca de um horário válido
@@ -62,4 +64,61 @@ public class TesteBuscaHorario {
         assertTrue(horarioValido);
     }
 
+    @Test
+    public void testeBuscaHorarioInexistente(){
+
+        Mockito.when(service.horarioExistente(66)).thenReturn(false);
+        //Faz a busca de um horário válido
+        boolean horarioValido = service.horarioExistente(66);
+
+        assertFalse(horarioValido);
+    }
+
+    @Test
+    public void testeSalaPredioValido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.CHRIS);
+        
+        Horarios chris = buscaHorario.buscaHorarios(10);
+
+        boolean salaValida = buscaHorario.verificaSalaPredio(chris.getSala(),chris.getPredio());
+
+        assertTrue(salaValida);
+    }
+
+    @Test
+    public void testeSalaPredioInvalido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.RENZO);
+        
+        Horarios renzo = buscaHorario.buscaHorarios(10);
+
+        boolean salaValida = buscaHorario.verificaSalaPredio(renzo.getSala(),renzo.getPredio());
+
+        assertFalse(salaValida);
+    }
+
+    @Test
+    public void testeHoraAtendimentoValido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.RENZO);
+        
+        Horarios renzo = buscaHorario.buscaHorarios(10);
+
+        boolean salaValida = buscaHorario.verificaHoraAtendimento(renzo.getHorarioDeAtendimento());
+
+        assertTrue(salaValida);
+    }
+
+    @Test
+    public void testeHoraAtendimentoInvalido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.MARCELO);
+        
+        Horarios marcelinho = buscaHorario.buscaHorarios(10);
+
+        boolean horaValida = buscaHorario.verificaHoraAtendimento(marcelinho.getHorarioDeAtendimento());
+
+        assertFalse(horaValida);
+    }
 }
