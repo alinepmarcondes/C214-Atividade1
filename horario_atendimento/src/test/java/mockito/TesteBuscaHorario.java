@@ -10,7 +10,6 @@ import org.mockito.junit.MockitoJUnitRunner;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.mockito.ArgumentMatchers.booleanThat;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -72,6 +71,54 @@ public class TesteBuscaHorario {
         boolean horarioValido = service.horarioExistente(66);
 
         assertFalse(horarioValido);
+    }
+
+    @Test    
+    public void testeSalaValida(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.CHRIS);
+        
+        Horarios chris = buscaHorario.buscaHorarios(10);
+
+        boolean salaValida = buscaHorario.verificaSala(chris.getSala());
+
+        assertTrue(salaValida);
+    }
+
+    @Test    
+    public void testeSalaInvalida(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.YVO);
+        
+        Horarios yvo = buscaHorario.buscaHorarios(10);
+
+        boolean salaValida = buscaHorario.verificaSala(yvo.getSala());
+
+        assertFalse(salaValida);
+    }
+
+    @Test    
+    public void testePredioValido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.CHRIS);
+        
+        Horarios chris = buscaHorario.buscaHorarios(10);
+
+        boolean predioValido = buscaHorario.verificaPredio(chris.getPredio());
+
+        assertTrue(predioValido);
+    }
+
+    @Test    
+    public void testePredioInvalido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.YVO);
+        
+        Horarios yvo = buscaHorario.buscaHorarios(10);
+
+        boolean predioValido = buscaHorario.verificaPredio(yvo.getPredio());
+
+        assertTrue(predioValido);
     }
 
     @Test
