@@ -35,6 +35,28 @@ public class BuscaHorario {
         }
     }
 
+    public boolean verificaSala(String sala){
+        Integer salaInt = Integer.parseInt(sala);
+
+        if(salaInt > 0 && salaInt <= 25){
+            return true;
+        }
+        else{ 
+            return false;
+        }
+    }
+
+    public boolean verificaPredio(String predio){
+        Integer predioInt = Integer.parseInt(predio);
+
+        if((predioInt > 0 && predioInt < 5) || predioInt == 6){
+            return true;
+        }
+        else{ 
+            return false;
+        }
+    }
+
     public boolean verificaSalaPredio(String sala, String predio){
         Integer salaInt = Integer.parseInt(sala);
         Integer predioInt = Integer.parseInt(predio);
