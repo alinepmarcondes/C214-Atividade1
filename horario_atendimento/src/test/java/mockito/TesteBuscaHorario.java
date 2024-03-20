@@ -4,9 +4,7 @@ import br.inatel.c214.BuscaHorario;
 import br.inatel.c214.Horarios;
 import br.inatel.c214.HorariosService;
 import constante.HorariosConst;
-import junit.*;
 import org.mockito.*;
-import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import static org.junit.Assert.assertEquals;
@@ -63,4 +61,5 @@ public class TesteBuscaHorario {
 
         assertTrue(horarioValido);
     }
+
 }
