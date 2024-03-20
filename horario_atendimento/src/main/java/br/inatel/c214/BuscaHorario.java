@@ -1,5 +1,8 @@
 package br.inatel.c214;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -30,5 +33,28 @@ public class BuscaHorario {
         }else{
             return false;
         }
+    }
+
+    public boolean verificaSalaPredio(String sala, String predio){
+        Integer salaInt = Integer.parseInt(sala);
+        Integer predioInt = Integer.parseInt(predio);
+
+        if((((predioInt*5)-4) < salaInt) && (predioInt*5 > salaInt)){
+            return true;
+        }
+        else{ 
+            return false;
+        }
+    }
+
+    public boolean verificaHoraAtendimento(String hora){
+
+        String regex = "^([01]?[0-9]|2[0-3]):[0-5][0-9]$";
+
+        Pattern pattern = Pattern.compile(regex);
+    
+        Matcher matcher = pattern.matcher(hora);
+
+        return matcher.matches();
     }
 }
