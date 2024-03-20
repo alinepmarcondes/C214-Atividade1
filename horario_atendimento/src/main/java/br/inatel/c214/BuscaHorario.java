@@ -35,6 +35,15 @@ public class BuscaHorario {
         }
     }
 
+    public Integer parseStrInteger(String str){
+        try {
+            return Integer.parseInt(str);
+        } catch (NumberFormatException e) {
+            // Handle the exception, such as logging or returning a default value
+            return 0;
+        }
+    }
+
     public boolean verificaSala(String sala){
         Integer salaInt = Integer.parseInt(sala);
 
