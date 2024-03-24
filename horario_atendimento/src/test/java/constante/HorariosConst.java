@@ -33,7 +33,7 @@ public class HorariosConst {
         public static String YVO =
         "{ \"nomeDoProfessor\":\"Yvo\", \n " +
                 "\"horarioDeAtendimento\":\"21:30\", \n " +
-                "\"periodo\":\"noturno\", \n " +
+                "\"periodo\":\"sabados\", \n " +
                 "\"sala\":\"0\",\n " +
                 "\"predio\":\"3\"}";
 

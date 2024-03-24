@@ -88,4 +88,15 @@ public class BuscaHorario {
 
         return matcher.matches();
     }
+
+    public boolean verificaTurno(String turno) {
+        String[] turnos = {"Integral", "Noturno"};
+        for (String t : turnos) {
+            if (t.equalsIgnoreCase(turno)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
 }

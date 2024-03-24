@@ -168,4 +168,31 @@ public class TesteBuscaHorario {
 
         assertFalse(horaValida);
     }
+
+    @Test
+    public void testeTurnoValido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.MARCELO);
+        
+        Horarios marcelinho = buscaHorario.buscaHorarios(10);
+
+        boolean turnoValido = buscaHorario.verificaTurno(marcelinho.getPeriodo());
+
+        assertTrue(turnoValido);
+    }
+
+    @Test
+    public void testeTurnoInvalido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.YVO);
+        
+        Horarios yvo = buscaHorario.buscaHorarios(10);
+
+        boolean turnoInvalido = buscaHorario.verificaTurno(yvo.getPeriodo());
+
+        assertFalse(turnoInvalido);
+    }
+
+    
+
 }
