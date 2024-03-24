@@ -39,10 +39,10 @@ public class HorariosConst {
 
         public static String SONED =
         "{ \"nomeDoProfessor\":\"Soned1951\", \n " +
-                "\"horarioDeAtendimento\":\"9:30\", \n " +
+                "\"horarioDeAtendimento\":\"17:30\", \n " +
                 "\"periodo\":\"integral\", \n " +
-                "\"sala\":\"23\",\n " +
-                "\"predio\":\"6\"}";     
+                "\"sala\":\"3\",\n " +
+                "\"predio\":\"1\"}";     
 
         public static String INEXISTENTE =
         "{ \"nomeDoProfessor\":\"Inexistente\", \n " +
