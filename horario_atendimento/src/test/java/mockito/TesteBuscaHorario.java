@@ -244,4 +244,28 @@ public class TesteBuscaHorario {
 
         assertTrue(comConflito);
     }
+
+    @Test
+    public void testeVerificaHorarioTurnoValido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.CHRIS);
+
+        Horarios chris = buscaHorario.buscaHorarios(10);
+
+        boolean horaTurnoValido = buscaHorario.verificaHoraTurno(chris.getHorarioDeAtendimento(), chris.getPeriodo());
+
+        assertTrue(horaTurnoValido);
+    }
+
+    @Test
+    public void testeVerificaHorarioTurnoInvalido(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.GUILHERME);
+
+        Horarios guilherme = buscaHorario.buscaHorarios(10);
+
+        boolean horaTurnoInvalido = buscaHorario.verificaHoraTurno(guilherme.getHorarioDeAtendimento(), guilherme.getPeriodo());
+
+        assertTrue(horaTurnoInvalido);
+    }
 }
