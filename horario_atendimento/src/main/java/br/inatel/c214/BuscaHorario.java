@@ -128,10 +128,11 @@ public class BuscaHorario {
     }
 
     public boolean verificaHoraTurno(String hora, String turno) {
-        if (turno == "integral") {
+
+        if (turno.equals("integral")){
             return true;
         }
-        else {
+        else{
             String regex = "^(1[89]|20|21):(3[0-9]|2[0-9]|1[0-9]|0[0-9]):[0-5][0-9]$";
 
             Pattern pattern = Pattern.compile(regex);
@@ -140,5 +141,6 @@ public class BuscaHorario {
 
             return matcher.matches();
         }
+
     }
 }

@@ -266,6 +266,6 @@ public class TesteBuscaHorario {
 
         boolean horaTurnoInvalido = buscaHorario.verificaHoraTurno(guilherme.getHorarioDeAtendimento(), guilherme.getPeriodo());
 
-        assertTrue(horaTurnoInvalido);
+        assertFalse(horaTurnoInvalido);
     }
 }
