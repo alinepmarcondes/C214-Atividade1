@@ -98,5 +98,15 @@ public class BuscaHorario {
         }
         return false;
     }
+
+    public boolean verificaNome(String nome){
+
+        String regex = "^[a-zA-Z\\s]+$";
+
+        Pattern pattern = Pattern.compile(regex);
     
+        Matcher matcher = pattern.matcher(nome);
+
+        return matcher.matches();
+    } 
 }
