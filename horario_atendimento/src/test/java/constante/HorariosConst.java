@@ -42,7 +42,14 @@ public class HorariosConst {
                 "\"horarioDeAtendimento\":\"17:30\", \n " +
                 "\"periodo\":\"integral\", \n " +
                 "\"sala\":\"3\",\n " +
-                "\"predio\":\"1\"}";     
+                "\"predio\":\"1\"}";
+                
+        public static String GUILHERME =
+        "{ \"nomeDoProfessor\":\"Guilherme\", \n " +
+                "\"horarioDeAtendimento\":\"9:30\", \n " +
+                "\"periodo\":\"noturno\", \n " +
+                "\"sala\":\"3\",\n " +
+                "\"predio\":\"1\"}";
 
         public static String INEXISTENTE =
         "{ \"nomeDoProfessor\":\"Inexistente\", \n " +
