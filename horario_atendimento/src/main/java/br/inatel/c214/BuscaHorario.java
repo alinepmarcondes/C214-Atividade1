@@ -109,4 +109,21 @@ public class BuscaHorario {
 
         return matcher.matches();
     } 
+
+    public boolean verificaConflito(Horarios[] horarios) {
+        for (int i = 0; i < horarios.length - 1; i++) {
+            for (int j = i + 1; j < horarios.length; j++) {
+                if (horarios[i].getSala().equals(horarios[j].getSala()) &&
+                        horarios[i].getHorarioDeAtendimento().equals(horarios[j].getHorarioDeAtendimento())) {
+                    System.out.println("Conflito encontrado entre " + horarios[i].getNome() +
+                            " e " + horarios[j].getNome() +
+                            " na sala " + horarios[i].getSala() +
+                            " do predio " + horarios[i].getPredio() +
+                            " na hora " + horarios[i].getHorarioDeAtendimento());
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 }
