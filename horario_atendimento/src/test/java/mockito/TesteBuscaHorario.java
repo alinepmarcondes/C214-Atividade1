@@ -217,4 +217,31 @@ public class TesteBuscaHorario {
         assertFalse(nomeInvalido);
     }
 
+    @Test
+    public void testeVerificaSemConflito(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.MARCELO);
+        Mockito.when(service.busca(11)).thenReturn(HorariosConst.SONED);
+        Mockito.when(service.busca(12)).thenReturn(HorariosConst.YVO);
+
+        Horarios[] professores = {buscaHorario.buscaHorarios(10),buscaHorario.buscaHorarios(11),buscaHorario.buscaHorarios(12)};
+
+        boolean comConflito = buscaHorario.verificaConflito(professores);
+
+        assertFalse(comConflito);
+    }
+
+    @Test
+    public void testeVerificaComConflito(){
+
+        Mockito.when(service.busca(10)).thenReturn(HorariosConst.MARCELO);
+        Mockito.when(service.busca(11)).thenReturn(HorariosConst.SONED);
+        Mockito.when(service.busca(12)).thenReturn(HorariosConst.CHRIS);
+
+        Horarios[] professores = {buscaHorario.buscaHorarios(10),buscaHorario.buscaHorarios(11),buscaHorario.buscaHorarios(12)};
+
+        boolean comConflito = buscaHorario.verificaConflito(professores);
+
+        assertTrue(comConflito);
+    }
 }
