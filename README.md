@@ -8,7 +8,7 @@ Os testes são referentes a Classe BuscaHorarios.
 
 As principais ferramentas utilizadas foram:
 
-Gerenciador de dependencias: Maven
+* Gerenciador de dependencias: Maven
 * Versionamento: Git
 * Teste unitario: Junit
 * Teste Mock: Mockito
